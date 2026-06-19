@@ -12,7 +12,11 @@ application_path = os.path.dirname(sys.executable)
 
 #Create the pivot_table from module pivot_table.py
 month=input("Input month: ")
+path=""
 path=create_pivot_table(month,application_path)
+
+if path=="":
+    sys.exit()
 
 #Configuration
 workbook = load_workbook(path)
