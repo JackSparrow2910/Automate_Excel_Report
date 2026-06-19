@@ -4,9 +4,15 @@ from openpyxl.chart import BarChart, Reference
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font
 
+import os
+import sys
+
+#Preparation to convert to exe and find the path of the exe file
+application_path = os.path.dirname(sys.executable)
+
 #Create the pivot_table from module pivot_table.py
 month=input("Input month: ")
-path=create_pivot_table(month)
+path=create_pivot_table(month,application_path)
 
 #Configuration
 workbook = load_workbook(path)
